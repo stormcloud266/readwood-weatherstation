@@ -21,14 +21,16 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({
   error,
 }: CellFailureProps<FindWeatherQueryVariables>) => (
-  <div style={{ color: 'red' }}>{error?.message}</div>
+  <div className="border-l-2 border-red-900/50 py-2 px-4 bg-red-200 rounded-sm text-red-900">
+    {error?.message}
+  </div>
 )
 
 export const Success = ({
   weather,
 }: CellSuccessProps<FindWeatherQuery, FindWeatherQueryVariables>) => {
   return (
-    <section>
+    <section className="">
       <h1>{weather.city}</h1>
       <h2>
         <img src={weather.icon} className="w-12 h-12" alt="" />
